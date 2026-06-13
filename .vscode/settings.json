@@ -1,9 +1,9 @@
 {
-    "java.project.referencedLibraries": [
-        "libs/**/*.jar"
-    ],
     "java.project.sourcePaths": [
         "src",
         "lyrics"
+    ],
+    "java.project.referencedLibraries": [
+        "libs/**/*.jar"
     ]
 }
