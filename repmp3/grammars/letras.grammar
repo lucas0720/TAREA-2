@@ -1,0 +1,40 @@
+Package lyrics;
+
+Helpers
+    digito = ['0' .. '9'];
+    letra = [['a' .. 'z'] + ['A' .. 'Z']];
+    // 9 es Tabulador, 13 y 10 son saltos de línea. Los agrupamos todos.
+    espacio = ' ' | 9 | 13 | 10;
+    comilla = 39;
+
+Tokens
+    corchete_izq = '[';
+    corchete_der = ']';
+    dos_puntos = ':';
+    p_punto = '.';        
+    numero = digito+;
+    
+    // El texto ahora tiene más símbolos de puntuación por si acaso
+    texto = (letra | ',' | '.' | '!' | '?' | '-' | comilla | '(' | ')' | '&')+;
+    
+    // 'blanco' ahora absorbe espacios Y saltos de línea
+    blanco = espacio+;
+
+Ignored Tokens
+    blanco;
+
+Productions
+    cancion = linea+;
+
+    // Como los saltos de línea son invisibles, cada línea nueva 
+    // se detecta automáticamente cuando aparece un '['.
+    // También eliminamos la regla {vacia} porque ya no es necesaria.
+    linea = 
+        {metadato} corchete_izq [etiq]:texto dos_puntos [val]:elemento* corchete_der |
+        {tiempo} corchete_izq [m]:numero dos_puntos [s]:numero p_punto [c]:numero corchete_der [letra]:elemento*;
+
+    elemento =
+        {txt} texto |
+        {num} numero |
+        {dp} dos_puntos |
+        {pp} p_punto;
