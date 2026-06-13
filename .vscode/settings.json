@@ -1,23 +1,9 @@
 {
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "repmp3/libs/basicplayer3.0 - copia.jar",
-        "repmp3/libs/basicplayer3.0.jar",
-        "repmp3/libs/commons-logging-api - copia.jar",
-        "repmp3/libs/commons-logging-api.jar",
-        "repmp3/libs/jflac-1.2.jar",
-        "repmp3/libs/jl1.0.jar",
-        "repmp3/libs/jmactritonusspi1.74.jar",
-        "repmp3/libs/jml-1.0b4.jar",
-        "repmp3/libs/jogg-0.0.7.jar",
-        "repmp3/libs/jorbis-0.0.15.jar",
-        "repmp3/libs/jspeex0.9.7.jar",
-        "repmp3/libs/kj_dsp1.1.jar",
-        "repmp3/libs/mp3spi1.9.4.jar",
-        "repmp3/libs/sablecc.jar",
-        "repmp3/libs/substance.jar",
-        "repmp3/libs/tritonus_share.jar",
-        "repmp3/libs/vorbisspi1.0.2 - copia.jar",
-        "repmp3/libs/vorbisspi1.0.2.jar"
+        "libs/**/*.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src",
+        "lyrics"
     ]
 }
