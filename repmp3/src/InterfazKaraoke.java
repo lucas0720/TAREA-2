@@ -1,5 +1,5 @@
 package src;
-
+//  Integrantes: Lucas Araya, Francisco Carvajal, Rocio Villalobos
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -26,14 +26,14 @@ public class InterfazKaraoke extends JFrame {
         setLayout(new BorderLayout(10, 10));
         getContentPane().setBackground(Color.DARK_GRAY);
 
-        // --- ZONA SUPERIOR: SELECTORES ---
+        // --- ZONA SUPERIOR: SELECTOR DE CANCIONES ---
         JPanel panelInputs = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         panelInputs.setBackground(Color.DARK_GRAY);
         
         comboMp3 = new JComboBox<>();
         comboMp3.setEditable(true);
         comboMp3.setPreferredSize(new Dimension(150, 25));
-        // Si el usuario cambia de canción, reseteamos el botón al estado inicial
+        // Si el usuario cambia de canción, resetea el botón al estado inicial
         comboMp3.addActionListener(e -> resetearReproductor()); 
 
         comboLrc = new JComboBox<>();
@@ -59,7 +59,7 @@ public class InterfazKaraoke extends JFrame {
         areaLetra.setMargin(new Insets(10, 10, 10, 10));
         add(new JScrollPane(areaLetra), BorderLayout.CENTER);
 
-        // --- ZONA INFERIOR: BOTÓN ÚNICO ---
+        // --- ZONA INFERIOR: BOTÓN PLAY/STOP ---
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 15));
         panelBotones.setBackground(Color.DARK_GRAY);
         
@@ -73,13 +73,12 @@ public class InterfazKaraoke extends JFrame {
         add(panelBotones, BorderLayout.SOUTH);
     }
 
-    // El cerebro del botón único
     // El cerebro del botón único (Versión a prueba de balas: Play/Stop)
     private void manejarBotonToggle() {
         if (estadoReproduccion == 0) {
             // Estado 0: Cargar la canción desde cero
             estadoReproduccion = 1;
-            btnToggle.setText("Stop"); // Ahora invita a detener por completo
+            btnToggle.setText("Stop"); // Detiene por completo
             areaLetra.setText("Cargando pista...\n\n");
             
             new Thread(() -> {
@@ -89,7 +88,7 @@ public class InterfazKaraoke extends JFrame {
                     reproductor.cargarCancion(mp3Elegido, lrcElegido);
                     reproductor.Play();
                 } catch (Exception ex) {
-                    areaLetra.append("❌ Error al cargar. Verifica los nombres.\n");
+                    areaLetra.append("Error al cargar. Verifica los nombres.\n");
                     resetearReproductor();
                 }
             }).start();
