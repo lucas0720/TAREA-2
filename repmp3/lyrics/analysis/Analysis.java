@@ -13,13 +13,13 @@ public interface Analysis extends Switch
 
     void caseStart(Start node);
     void caseACancion(ACancion node);
-    void caseAMetadatoLinea(AMetadatoLinea node);
     void caseATiempoLinea(ATiempoLinea node);
     void caseATxtElemento(ATxtElemento node);
     void caseANumElemento(ANumElemento node);
     void caseADpElemento(ADpElemento node);
     void caseAPpElemento(APpElemento node);
 
+    void caseTMetadatoIgnorado(TMetadatoIgnorado node);
     void caseTCorcheteIzq(TCorcheteIzq node);
     void caseTCorcheteDer(TCorcheteDer node);
     void caseTDosPuntos(TDosPuntos node);

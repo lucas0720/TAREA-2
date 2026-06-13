@@ -81,12 +81,6 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAMetadatoLinea(AMetadatoLinea node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
     public void caseATiempoLinea(ATiempoLinea node)
     {
         defaultCase(node);
@@ -112,6 +106,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAPpElemento(APpElemento node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTMetadatoIgnorado(TMetadatoIgnorado node)
     {
         defaultCase(node);
     }

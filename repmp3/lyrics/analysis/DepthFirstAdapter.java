@@ -60,46 +60,6 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outACancion(node);
     }
 
-    public void inAMetadatoLinea(AMetadatoLinea node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAMetadatoLinea(AMetadatoLinea node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseAMetadatoLinea(AMetadatoLinea node)
-    {
-        inAMetadatoLinea(node);
-        if(node.getCorcheteIzq() != null)
-        {
-            node.getCorcheteIzq().apply(this);
-        }
-        if(node.getEtiq() != null)
-        {
-            node.getEtiq().apply(this);
-        }
-        if(node.getDosPuntos() != null)
-        {
-            node.getDosPuntos().apply(this);
-        }
-        {
-            List<PElemento> copy = new ArrayList<PElemento>(node.getVal());
-            for(PElemento e : copy)
-            {
-                e.apply(this);
-            }
-        }
-        if(node.getCorcheteDer() != null)
-        {
-            node.getCorcheteDer().apply(this);
-        }
-        outAMetadatoLinea(node);
-    }
-
     public void inATiempoLinea(ATiempoLinea node)
     {
         defaultIn(node);

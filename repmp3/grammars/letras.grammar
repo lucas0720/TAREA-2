@@ -6,31 +6,37 @@ Helpers
     // 9 es Tabulador, 13 y 10 son saltos de línea. Los agrupamos todos.
     espacio = ' ' | 9 | 13 | 10;
     comilla = 39;
+    
+    // Captura absolutamente cualquier símbolo del teclado excepto el ']'
+    todo_menos_corchete = [[0 .. 0xffff] - ']'];
 
 Tokens
+    // --- MAGIA: EL ESCUDO ANTIMETADATOS ---
+    // Atrapa cosas como [ar:Evanescence] o [by:@negaonie]
+    metadato_ignorado = '[' letra+ ':' todo_menos_corchete* ']';
+
     corchete_izq = '[';
     corchete_der = ']';
     dos_puntos = ':';
     p_punto = '.';        
     numero = digito+;
     
-    // El texto ahora tiene más símbolos de puntuación por si acaso
-    texto = (letra | ',' | '.' | '!' | '?' | '-' | comilla | '(' | ')' | '&')+;
+    // El texto ahora es a prueba de balas para canciones raras
+    texto = (letra | ',' | '.' | '!' | '?' | '-' | comilla | '(' | ')' | '&' | '@' | '_' | '#' | '/' | '*' | '+' | '=')+;
     
     // 'blanco' ahora absorbe espacios Y saltos de línea
     blanco = espacio+;
 
 Ignored Tokens
-    blanco;
+    blanco, 
+    metadato_ignorado; // <--- SableCC mandará los metadatos a la basura automáticamente
 
 Productions
     cancion = linea+;
 
-    // Como los saltos de línea son invisibles, cada línea nueva 
-    // se detecta automáticamente cuando aparece un '['.
-    // También eliminamos la regla {vacia} porque ya no es necesaria.
+    // Como los metadatos se ignoran arriba, la línea solo se preocupa de los tiempos.
+    // El asterisco en [letra]:elemento* permite que existan tiempos sin texto.
     linea = 
-        {metadato} corchete_izq [etiq]:texto dos_puntos [val]:elemento* corchete_der |
         {tiempo} corchete_izq [m]:numero dos_puntos [s]:numero p_punto [c]:numero corchete_der [letra]:elemento*;
 
     elemento =

@@ -33,9 +33,10 @@ public class Reproductor {
         if(timerGlobal != null) timerGlobal.cancel();
         timerGlobal = new Timer();
 
-        // 1. Parsing de la letra
         String rutaLrc = "songs/" + lrcNombre;
-        Lexer lexer = new Lexer(new PushbackReader(new FileReader(rutaLrc), 1024));
+
+        // 1. Parsing directo del archivo original (¡La nueva gramática ignora la basura!)
+        Lexer lexer = new Lexer(new java.io.PushbackReader(new java.io.FileReader(rutaLrc), 1024));
         Parser parser = new Parser(lexer);
         Start tree = parser.parse();
         
@@ -44,12 +45,13 @@ public class Reproductor {
         tree.apply(visitador);
         
         // 2. Carga Audio
-        player.open(new File("songs/" + mp3Nombre));
-        
+        player.open(new java.io.File("songs/" + mp3Nombre));
+        long delayAudio = 1500;
         // 3. Agendar eventos
-        for (LineaLetra linea : miRepositorio.getListaSubtitulos()) {
-            new Reminder(linea.getTiempo(), linea.getTexto());
+        for (LineaLetra subtitulo : miRepositorio.getListaSubtitulos()) {
+            new Reminder(subtitulo.getTiempo() + delayAudio, subtitulo.getTexto());
         }
+
     }
 
     public class Reminder {

@@ -61,47 +61,6 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outACancion(node);
     }
 
-    public void inAMetadatoLinea(AMetadatoLinea node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAMetadatoLinea(AMetadatoLinea node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseAMetadatoLinea(AMetadatoLinea node)
-    {
-        inAMetadatoLinea(node);
-        if(node.getCorcheteDer() != null)
-        {
-            node.getCorcheteDer().apply(this);
-        }
-        {
-            List<PElemento> copy = new ArrayList<PElemento>(node.getVal());
-            Collections.reverse(copy);
-            for(PElemento e : copy)
-            {
-                e.apply(this);
-            }
-        }
-        if(node.getDosPuntos() != null)
-        {
-            node.getDosPuntos().apply(this);
-        }
-        if(node.getEtiq() != null)
-        {
-            node.getEtiq().apply(this);
-        }
-        if(node.getCorcheteIzq() != null)
-        {
-            node.getCorcheteIzq().apply(this);
-        }
-        outAMetadatoLinea(node);
-    }
-
     public void inATiempoLinea(ATiempoLinea node)
     {
         defaultIn(node);

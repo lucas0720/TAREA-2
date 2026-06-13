@@ -204,75 +204,63 @@ public class Parser
                 push(goTo(0), list, false);
             }
             break;
-            case 1: /* reduce AAmetadatolinea1Linea */
+            case 1: /* reduce AAtiempolinea1Linea */
             {
                 ArrayList<Object> list = new1();
                 push(goTo(1), list, false);
             }
             break;
-            case 2: /* reduce AAmetadatolinea2Linea */
+            case 2: /* reduce AAtiempolinea2Linea */
             {
                 ArrayList<Object> list = new2();
                 push(goTo(1), list, false);
             }
             break;
-            case 3: /* reduce AAtiempolinea1Linea */
+            case 3: /* reduce ATxtElemento */
             {
                 ArrayList<Object> list = new3();
-                push(goTo(1), list, false);
+                push(goTo(2), list, false);
             }
             break;
-            case 4: /* reduce AAtiempolinea2Linea */
+            case 4: /* reduce ANumElemento */
             {
                 ArrayList<Object> list = new4();
-                push(goTo(1), list, false);
+                push(goTo(2), list, false);
             }
             break;
-            case 5: /* reduce ATxtElemento */
+            case 5: /* reduce ADpElemento */
             {
                 ArrayList<Object> list = new5();
                 push(goTo(2), list, false);
             }
             break;
-            case 6: /* reduce ANumElemento */
+            case 6: /* reduce APpElemento */
             {
                 ArrayList<Object> list = new6();
                 push(goTo(2), list, false);
             }
             break;
-            case 7: /* reduce ADpElemento */
+            case 7: /* reduce ATerminal$Linea */
             {
                 ArrayList<Object> list = new7();
-                push(goTo(2), list, false);
+                push(goTo(3), list, true);
             }
             break;
-            case 8: /* reduce APpElemento */
+            case 8: /* reduce ANonTerminal$Linea */
             {
                 ArrayList<Object> list = new8();
-                push(goTo(2), list, false);
+                push(goTo(3), list, true);
             }
             break;
-            case 9: /* reduce ATerminal$Linea */
+            case 9: /* reduce ATerminal$Elemento */
             {
                 ArrayList<Object> list = new9();
-                push(goTo(3), list, true);
-            }
-            break;
-            case 10: /* reduce ANonTerminal$Linea */
-            {
-                ArrayList<Object> list = new10();
-                push(goTo(3), list, true);
-            }
-            break;
-            case 11: /* reduce ATerminal$Elemento */
-            {
-                ArrayList<Object> list = new11();
                 push(goTo(4), list, true);
             }
             break;
-            case 12: /* reduce ANonTerminal$Elemento */
+            case 10: /* reduce ANonTerminal$Elemento */
             {
-                ArrayList<Object> list = new12();
+                ArrayList<Object> list = new10();
                 push(goTo(4), list, true);
             }
             break;
@@ -310,80 +298,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new1() /* reduce AAmetadatolinea1Linea */
-    {
-        @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
-
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList4 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PLinea plineaNode1;
-        {
-            // Block
-        TCorcheteIzq tcorcheteizqNode2;
-        TTexto ttextoNode3;
-        TDosPuntos tdospuntosNode4;
-        LinkedList<Object> listNode5 = new LinkedList<Object>();
-        TCorcheteDer tcorchetederNode6;
-        tcorcheteizqNode2 = (TCorcheteIzq)nodeArrayList1.get(0);
-        ttextoNode3 = (TTexto)nodeArrayList2.get(0);
-        tdospuntosNode4 = (TDosPuntos)nodeArrayList3.get(0);
-        {
-            // Block
-        }
-        tcorchetederNode6 = (TCorcheteDer)nodeArrayList4.get(0);
-
-        plineaNode1 = new AMetadatoLinea(tcorcheteizqNode2, ttextoNode3, tdospuntosNode4, listNode5, tcorchetederNode6);
-        }
-	nodeList.add(plineaNode1);
-        return nodeList;
-    }
-
-
-
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new2() /* reduce AAmetadatolinea2Linea */
-    {
-        @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
-
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList5 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList4 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PLinea plineaNode1;
-        {
-            // Block
-        TCorcheteIzq tcorcheteizqNode2;
-        TTexto ttextoNode3;
-        TDosPuntos tdospuntosNode4;
-        LinkedList<Object> listNode6 = new LinkedList<Object>();
-        TCorcheteDer tcorchetederNode7;
-        tcorcheteizqNode2 = (TCorcheteIzq)nodeArrayList1.get(0);
-        ttextoNode3 = (TTexto)nodeArrayList2.get(0);
-        tdospuntosNode4 = (TDosPuntos)nodeArrayList3.get(0);
-        {
-            // Block
-        LinkedList<Object> listNode5 = new LinkedList<Object>();
-        listNode5 = (LinkedList)nodeArrayList4.get(0);
-	if(listNode5 != null)
-	{
-	  listNode6.addAll(listNode5);
-	}
-        }
-        tcorchetederNode7 = (TCorcheteDer)nodeArrayList5.get(0);
-
-        plineaNode1 = new AMetadatoLinea(tcorcheteizqNode2, ttextoNode3, tdospuntosNode4, listNode6, tcorchetederNode7);
-        }
-	nodeList.add(plineaNode1);
-        return nodeList;
-    }
-
-
-
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new3() /* reduce AAtiempolinea1Linea */
+    ArrayList<Object> new1() /* reduce AAtiempolinea1Linea */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -425,7 +340,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new4() /* reduce AAtiempolinea2Linea */
+    ArrayList<Object> new2() /* reduce AAtiempolinea2Linea */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -474,7 +389,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new5() /* reduce ATxtElemento */
+    ArrayList<Object> new3() /* reduce ATxtElemento */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -494,7 +409,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new6() /* reduce ANumElemento */
+    ArrayList<Object> new4() /* reduce ANumElemento */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -514,7 +429,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new7() /* reduce ADpElemento */
+    ArrayList<Object> new5() /* reduce ADpElemento */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -534,7 +449,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new8() /* reduce APpElemento */
+    ArrayList<Object> new6() /* reduce APpElemento */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -554,7 +469,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new9() /* reduce ATerminal$Linea */
+    ArrayList<Object> new7() /* reduce ATerminal$Linea */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -576,7 +491,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new10() /* reduce ANonTerminal$Linea */
+    ArrayList<Object> new8() /* reduce ANonTerminal$Linea */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -605,7 +520,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new11() /* reduce ATerminal$Elemento */
+    ArrayList<Object> new9() /* reduce ATerminal$Elemento */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -627,7 +542,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new12() /* reduce ANonTerminal$Elemento */
+    ArrayList<Object> new10() /* reduce ANonTerminal$Elemento */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -658,55 +573,47 @@ public class Parser
     private static int[][][] actionTable;
 /*      {
 			{{-1, ERROR, 0}, {0, SHIFT, 1}, },
-			{{-1, ERROR, 1}, {4, SHIFT, 5}, {5, SHIFT, 6}, },
+			{{-1, ERROR, 1}, {4, SHIFT, 5}, },
 			{{-1, ERROR, 2}, {6, ACCEPT, -1}, },
-			{{-1, REDUCE, 9}, },
-			{{-1, REDUCE, 0}, {0, SHIFT, 1}, },
-			{{-1, ERROR, 5}, {2, SHIFT, 8}, },
-			{{-1, ERROR, 6}, {2, SHIFT, 9}, },
-			{{-1, REDUCE, 10}, },
-			{{-1, ERROR, 8}, {4, SHIFT, 10}, },
-			{{-1, ERROR, 9}, {1, SHIFT, 11}, {2, SHIFT, 12}, {3, SHIFT, 13}, {4, SHIFT, 14}, {5, SHIFT, 15}, },
-			{{-1, ERROR, 10}, {3, SHIFT, 18}, },
-			{{-1, REDUCE, 1}, },
 			{{-1, REDUCE, 7}, },
+			{{-1, REDUCE, 0}, {0, SHIFT, 1}, },
+			{{-1, ERROR, 5}, {2, SHIFT, 7}, },
 			{{-1, REDUCE, 8}, },
-			{{-1, REDUCE, 6}, },
+			{{-1, ERROR, 7}, {4, SHIFT, 8}, },
+			{{-1, ERROR, 8}, {3, SHIFT, 9}, },
+			{{-1, ERROR, 9}, {4, SHIFT, 10}, },
+			{{-1, ERROR, 10}, {1, SHIFT, 11}, },
+			{{-1, REDUCE, 1}, {2, SHIFT, 12}, {3, SHIFT, 13}, {4, SHIFT, 14}, {5, SHIFT, 15}, },
 			{{-1, REDUCE, 5}, },
-			{{-1, REDUCE, 11}, },
-			{{-1, ERROR, 17}, {1, SHIFT, 19}, {2, SHIFT, 12}, {3, SHIFT, 13}, {4, SHIFT, 14}, {5, SHIFT, 15}, },
-			{{-1, ERROR, 18}, {4, SHIFT, 21}, },
-			{{-1, REDUCE, 2}, },
-			{{-1, REDUCE, 12}, },
-			{{-1, ERROR, 21}, {1, SHIFT, 22}, },
-			{{-1, REDUCE, 3}, {2, SHIFT, 12}, {3, SHIFT, 13}, {4, SHIFT, 14}, {5, SHIFT, 15}, },
-			{{-1, REDUCE, 4}, {2, SHIFT, 12}, {3, SHIFT, 13}, {4, SHIFT, 14}, {5, SHIFT, 15}, },
+			{{-1, REDUCE, 6}, },
+			{{-1, REDUCE, 4}, },
+			{{-1, REDUCE, 3}, },
+			{{-1, REDUCE, 9}, },
+			{{-1, REDUCE, 2}, {2, SHIFT, 12}, {3, SHIFT, 13}, {4, SHIFT, 14}, {5, SHIFT, 15}, },
+			{{-1, REDUCE, 10}, },
         };*/
     private static int[][][] gotoTable;
 /*      {
 			{{-1, 2}, },
-			{{-1, 3}, {4, 7}, },
-			{{-1, 16}, {17, 20}, {23, 20}, },
+			{{-1, 3}, {4, 6}, },
+			{{-1, 16}, {17, 18}, },
 			{{-1, 4}, },
-			{{-1, 17}, {22, 23}, },
+			{{-1, 17}, },
         };*/
     private static String[] errorMessages;
 /*      {
 			"expecting: '['",
-			"expecting: numero, texto",
+			"expecting: numero",
 			"expecting: EOF",
 			"expecting: '[', EOF",
 			"expecting: ':'",
-			"expecting: numero",
-			"expecting: ']', ':', '.', numero, texto",
 			"expecting: '.'",
-			"expecting: '[', ']', ':', '.', numero, texto, EOF",
 			"expecting: ']'",
 			"expecting: '[', ':', '.', numero, texto, EOF",
         };*/
     private static int[] errors;
 /*      {
-			0, 1, 2, 3, 3, 4, 4, 3, 5, 6, 7, 3, 8, 8, 8, 8, 8, 6, 5, 3, 8, 9, 10, 10, 
+			0, 1, 2, 3, 3, 4, 3, 1, 5, 1, 6, 7, 7, 7, 7, 7, 7, 7, 7, 
         };*/
 
     static 

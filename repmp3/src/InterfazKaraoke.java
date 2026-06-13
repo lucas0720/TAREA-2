@@ -20,7 +20,7 @@ public class InterfazKaraoke extends JFrame {
         reproductor = new Reproductor();
         reproductor.setGui(this);
 
-        setTitle("🎤 Karaoke Minimalista");
+        setTitle("Karaoke Minimalista");
         setSize(600, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));
@@ -43,8 +43,8 @@ public class InterfazKaraoke extends JFrame {
 
         cargarArchivosDirectorio();
 
-        JLabel lblMp3 = new JLabel("🎵 MP3:"); lblMp3.setForeground(Color.WHITE);
-        JLabel lblLrc = new JLabel("📝 LRC:"); lblLrc.setForeground(Color.WHITE);
+        JLabel lblMp3 = new JLabel("MP3:"); lblMp3.setForeground(Color.WHITE);
+        JLabel lblLrc = new JLabel("LRC:"); lblLrc.setForeground(Color.WHITE);
         
         panelInputs.add(lblMp3); panelInputs.add(comboMp3);
         panelInputs.add(lblLrc); panelInputs.add(comboLrc);
@@ -63,7 +63,7 @@ public class InterfazKaraoke extends JFrame {
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 15));
         panelBotones.setBackground(Color.DARK_GRAY);
         
-        btnToggle = new JButton("▶ Play");
+        btnToggle = new JButton("Play");
         btnToggle.setFont(new Font("Arial", Font.BOLD, 22)); // Letra más grande
         btnToggle.setPreferredSize(new Dimension(250, 50)); // Botón ancho y protagonista
 
@@ -79,7 +79,7 @@ public class InterfazKaraoke extends JFrame {
         if (estadoReproduccion == 0) {
             // Estado 0: Cargar la canción desde cero
             estadoReproduccion = 1;
-            btnToggle.setText("⏹ Stop"); // Ahora invita a detener por completo
+            btnToggle.setText("Stop"); // Ahora invita a detener por completo
             areaLetra.setText("Cargando pista...\n\n");
             
             new Thread(() -> {
@@ -102,7 +102,7 @@ public class InterfazKaraoke extends JFrame {
     // Detiene todo y devuelve el botón a su estado original
     private void resetearReproductor() {
         estadoReproduccion = 0;
-        if (btnToggle != null) btnToggle.setText("▶ Play");
+        if (btnToggle != null) btnToggle.setText("Play");
         try { reproductor.Stop(); } catch(Exception ex) {}
     }
 
