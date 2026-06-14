@@ -52,7 +52,7 @@ public class Reproductor {
     }
 
     public void Play() throws Exception { 
-        // Si aprietan Play estando pausado, lo reanudamos inteligentemente
+        // Si aprietan Play estando pausado, lo reanudamos porque osino se bugiaba
         if (enPausa) {
             Continuar();
             return;
