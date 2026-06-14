@@ -1,22 +1,25 @@
 @echo off
-echo =========================================
-echo       MODO DIAGNOSTICO KARAOKE
-echo =========================================
+color 0A
+echo ==================================================
+echo         PROYECTO KARAOKE - FUNDAMENTOS U2
+echo ==================================================
 echo.
-echo [1/2] Intentando compilar...
-javac -cp ".;libs/*;lyrics" src/*.java
+
+:: PASO 1: COMPILACION
+echo [1/2] Compilando codigo fuente...
+javac -cp ".;libs/*" -d . src\*.java lyrics\lexer\*.java lyrics\parser\*.java lyrics\analysis\*.java lyrics\node\*.java
 
 if %errorlevel% neq 0 (
     echo.
-    echo ❌ ERROR DE COMPILACION DETECTADO.
+    echo [ERROR] Se encontraron errores de compilacion.
     pause
-    exit
+    exit /b %errorlevel%
 )
 
+:: PASO 2: EJECUCION
+echo [2/2] Compilacion exitosa. Iniciando Consola...
 echo.
-echo [2/2] Compilacion exitosa. Intentando abrir interfaz...
-java -cp ".;libs/*;lyrics;src" src.InterfazKaraoke
+:: Ejecuta la nueva clase Main
+java -cp ".;libs/*" src.Main
 
-echo.
-echo ⚠️ EL PROGRAMA SE CERRO.
 pause
