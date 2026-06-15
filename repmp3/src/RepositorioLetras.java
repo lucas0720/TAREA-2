@@ -34,20 +34,20 @@ public class RepositorioLetras {
     }
 }
 
-/*  RESUMEN DE MÉTODOS
+/*  RESUMEN DE METODOS
    
-   MÉTODO RepositorioLetras (Constructor)
+   METODOS RepositorioLetras (Constructor)
    - Crea la lista vacía donde se guardarán las frases de la canción.
 
-   MÉTODO agregarLinea
+   METODOS agregarLinea
    - Recibe una frase específica junto con su tiempo.
    - Agrega esta frase al final de la lista.
 
-   MÉTODO getListaSubtitulos
+   METODOS getListaSubtitulos
    - Toma la lista que contiene todas las frases ya guardadas.
    - Entrega esta lista completa para que otras partes del programa la puedan leer y usar.
 
-   MÉTODO mostrarTodo
+   METODOS mostrarTodo
    - Escribe un título en la pantalla.
    - Luego revisa una por una todas las frases que están guardadas en la lista.
    - Finalmente muestra los datos de cada frase en la pantalla para comprobar que todo se guardó de forma correcta.

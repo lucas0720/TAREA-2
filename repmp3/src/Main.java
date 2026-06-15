@@ -19,33 +19,33 @@ public class Main {
         boolean salir = false;
         
         while (!salir) {
-            System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Opciones: [1] Play  [2] Pausa  [3] Continuar  [4] Stop  [5] Cambiar Cancion  [6] Salir");
-            System.out.print(">>> Escribe tu opcion y presiona Enter: ");
+            System.out.println(" ----------------------------------------------------------- ");
+            System.out.println(" Opciones: [1] Play  [2] Pausa  [3] Continuar  [4] Stop  [5] Cambiar Cancion  [6] Salir");
+            System.out.print(" Escribe tu opcion y presiona Enter: ");
             String opcion = scanner.nextLine();
 
             try {
                 switch (opcion) {
                     case "1":
-                        System.out.println("\n--- REPRODUCIENDO ---");
+                        System.out.println("--- REPRODUCIENDO ---");
                         reproductor.Play();
                         break;
                     case "2":
-                        System.out.println("\n--- PAUSADO ---");
+                        System.out.println("--- PAUSADO ---");
                         reproductor.Pausa();
                         break;
                     case "3":
-                        System.out.println("\n--- CONTINUANDO ---");
+                        System.out.println("--- CONTINUANDO ---");
                         reproductor.Continuar();
                         break;
                     case "4":
-                        System.out.println("\n--- STOP ---");
+                        System.out.println("--- STOP ---");
                         reproductor.Stop();
                         break;
                     case "5":
                         // Si cambiamos de canción, primero detenemos la que está sonando
                         reproductor.Stop();
-                        System.out.println("\n--- CAMBIANDO CANCION ---");
+                        System.out.println("--- CAMBIANDO CANCION ---");
                         cargarNuevaCancion(scanner, reproductor);
                         break;
                     case "6":
@@ -57,7 +57,7 @@ public class Main {
                         System.out.println("Opcion invalida.");
                 }
             } catch (Exception e) {
-                System.out.println("\n[ERROR] Ocurrio un problema en la reproduccion.");
+                System.out.println("(ERROR) Ocurrio un problema en la reproduccion.");
                 System.out.println("Motivo: " + e.getMessage());
             }
         }
@@ -67,20 +67,20 @@ public class Main {
 
     // Nuevo método para reutilizar la carga de archivos
     private static void cargarNuevaCancion(Scanner scanner, Reproductor reproductor) {
-        System.out.print("\nIngresa el nombre del archivo MP3 (ej: cancion.mp3): ");
+        System.out.print(" Ingresa el nombre del archivo MP3 (ej: elperrochocolo.mp3): ");
         String mp3Nombre = scanner.nextLine();
 
-        System.out.print("Ingresa el nombre del archivo LRC (ej: letra.lrc): ");
+        System.out.print("Ingresa el nombre del archivo LRC (ej: letra el perro chocolo.lrc): ");
         String lrcNombre = scanner.nextLine();
 
         try {
-            System.out.println("\nCargando y analizando archivos...");
+            System.out.println(" Cargando y analizando archivos ");
             reproductor.cargarCancion(mp3Nombre, lrcNombre);
-            System.out.println("[OK] Analisis lexico y sintactico exitoso. Archivos cargados.");
+            System.out.println("(OK) Analisis lexico y sintactico exitoso. Archivos cargados. ");
         } catch (Exception e) {
-            System.out.println("\n[ERROR] Hubo un problema al cargar los archivos.");
-            System.out.println("Motivo: " + e.getMessage());
-            System.out.println("Por favor revisa que los nombres esten bien escritos y existan en 'songs/'.");
+            System.out.println(" (ERROR) Hubo un problema al cargar los archivos. ");
+            System.out.println(" Motivo: " + e.getMessage());
+            System.out.println(" Por favor revisa que los nombres esten bien escritos y existan en 'songs/'. ");
         }
     }
 }

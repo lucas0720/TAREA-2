@@ -35,12 +35,13 @@ public class VisitadorLetras extends DepthFirstAdapter {
 
 /* RESUMEN DE MÉTODOS
    
-   MÉTODO VisitadorLetras (Constructor)
+   METODOS VisitadorLetras (Constructor)
    - Recibe el espacio (repositorio) donde se guardarán las letras.
    - Finalmente guarda este espacio de forma interna en la clase para poder usarlo en los demás pasos.
 
-   MÉTODO outATiempoLinea
+   METODOS outATiempoLinea
    - Toma los textos de los minutos, segundos y centésimas que encontró el programa y los transforma en números de verdad.
    - Toma todas las palabras o símbolos separados de la canción y los va uniendo uno por uno para formar una sola oración de corrido.
    - Junta los números del tiempo con la oración terminada y los envía a la lista para dejarlos guardados en la memoria.
 */
+//EY EY EY EY AAAAQUI el rich eeeeeen minecraft yyyyy hoy les traigo .....

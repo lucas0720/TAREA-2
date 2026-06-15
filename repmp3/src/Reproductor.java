@@ -116,7 +116,7 @@ public class Reproductor {
         }
     }
 }
-
+//HOLA HOLA CABROS 
 /*   RESUMEN DE METODO
    ATRIBUTOS 
     - gui: Es la ventana visual donde se mostrarán las letras. 

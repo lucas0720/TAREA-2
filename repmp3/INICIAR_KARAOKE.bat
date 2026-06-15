@@ -8,7 +8,7 @@
 
 :: apoyándonos con ia, descubrimos esta forma de compilar y 
 :: ejecutar programas complejos en Java directamente desde la consola asi haciendo esto mas amigable, 
-:: enlazando librerías externas (.jar) sin depender de un IDE como Eclipse o VSCode.
+:: enlazando librerías externas (.jar) sin depender de un IDE.
 :: Es simplemente una alternativa eficiente para hacer algo distinto ademas en otras computadoras nos daba errores al no cargar bien las librerias.
 :: pero de esta forma pudimos quitarnos esos problemas al trabajar o probar desde distitnos computadores , fue un solucion que encontramos
 :: ==============================================================================
@@ -16,7 +16,7 @@
 :: Oculta los comandos internos para que la consola se vea limpia y profesional
 @echo off
 
-:: Cambia el color de la consola (0 = Fondo negro, A = Letras verdes)
+:: Cambia el color de la consolaaa (0 = Fondo negro, A = Letras verdes) quedo entero pro
 color 0A
 
 :: Imprime el encabezado visual del programa
