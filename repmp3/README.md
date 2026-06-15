@@ -17,6 +17,18 @@ Durante las fases iniciales de desarrollo y pruebas en diferentes entornos, nos 
 Para resolver este obstáculo de forma definitiva, investigamos y nos apoyamos estratégicamente en herramientas de Inteligencia Artificial para diseñar un entorno portátil unificado. Descubrimos kis archivos .bat (**`INICIAR_KARAOKE.bat`**). Este script compila y ejecuta todo el programa de forma directa y limpia desde la consola de comandos de Windows, garantizando que cualquier máquina que descargue el proyecto comprimido ejecute el reproductor con un solo clic, logrando un comportamiento completamente portable.
 
 ---
+## SOLUCIÓN A POSIBLES ERRORES EN VS CODE (Líneas Rojas)
+
+Si decides abrir el código fuente en un editor como **Visual Studio Code (VS Code)** para revisarlo, es muy probable Aparezca un error donde las importaciones aparecen subrayadas en rojo (por ejemplo: `import javazoom.jlgui.basicplayer.BasicPlayer;`)
+
+### 🛠️ Paso a paso para solucionarlo en VS Code:
+1. En la barra lateral izquierda de VS Code, baja hasta la sección que dice **"JAVA PROJECTS"** (Proyectos de Java).
+2. Despliega esa pestaña y busca la sub-sección **"Referenced Libraries"** (Librerías referenciadas).
+3. Haz clic en el ícono de **"+"** (Añadir librería) que aparece al pasar el ratón por ahí.
+4. Se abrirá el explorador de archivos. Navega hacia la carpeta `libs/` de este proyecto.
+5. Selecciona los archivos `.jar`
+
+fue un problema donde la solucion que encontramos fue esta y el uso de .bat , pero queriamos dejar constancia de que sabiamos de este error y que sabemos como solucionarlo y una explicacion en caso de que esto suceda
 
 ## 🛠️ Cómo Ejecutar el Programa
 
