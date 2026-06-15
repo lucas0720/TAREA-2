@@ -37,3 +37,28 @@ javac -cp ".;libs/*" -d . src/*.java lyrics/lexer/*.java lyrics/parser/*.java ly
 **Paso 2: Compilar el código java**
 
 java -cp ".;libs/*" src.Main
+
+
+
+
+**EJEMPLO::**
+=========================================
+      KARAOKE POR CONSOLA - TAREA 2
+=========================================
+Instruccion: Asegurate de que los archivos esten en la carpeta 'songs/'
+
+Ingresa el nombre del archivo MP3 (ej: cancion.mp3): evanescense.mp3
+Ingresa el nombre del archivo LRC (ej: letra.lrc): bring me to life.lrc
+
+Cargando y analizando archivos
+[OK] Analisis lexico y sintactico exitoso. Archivos cargados.
+
+-----------------------------------------------------------
+ Opciones: [1] Play  [2] Pausa  [3] Continuar  [4] Stop  [5] Cambiar Cancion  [6] Salir
+>>> Escribe tu opcion y presiona Enter: 1
+
+--- REPRODUCIENDO ---
+
+>> How can you see into my eyes
+>> like open doors?
+>> Leading you down into my core

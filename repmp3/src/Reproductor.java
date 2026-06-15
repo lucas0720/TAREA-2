@@ -111,7 +111,7 @@ public class Reproductor {
         }
         class RemindTask extends TimerTask {
             public void run() {
-                System.out.println("\n[🎵] >> " + texto); 
+                System.out.println(" " + texto); 
             }
         }
     }
